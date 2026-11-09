@@ -1,6 +1,6 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4dbe8"><meta name="description" content="くまのいえオリジナル数秘。こころの種・いのちの色・みらいの花を美空ちゃんと読み解くニャン。"><link rel="icon" type="image/png" sizes="512x512" href="ICON.PNG?v=2"><link rel="apple-touch-icon" sizes="180x180" href="APPLE-TOUCH-ICON.PNG?v=2"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="くまのいえ数秘"><title>くまのいえ｜みっつの時間の数秘</title><style>
 :root{--ink:#594557;--pink:#e9a7c2;--violet:#9475b1;--paper:#fffafc;--line:#eadce8}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 0%,#ffe4ee,transparent 40%),radial-gradient(circle at 90% 25%,#eee3ff,transparent 45%),#fffafc;line-height:1.9}main{max-width:850px;margin:auto;padding:22px 16px 70px}.hero{text-align:center;padding:32px 12px 20px}.eyebrow{font-size:.84rem;letter-spacing:.16em;color:#9a718e}h1{font-size:clamp(1.65rem,5vw,2.45rem);line-height:1.45;margin:9px 0}.hero p{margin:8px auto;max-width:560px}.card{background:#ffffffde;border:1px solid var(--line);border-radius:24px;padding:24px;margin:20px 0;box-shadow:0 10px 30px #b68ba51a}.field{display:grid;gap:9px}label{font-weight:700}input{width:100%;padding:15px;border:1px solid #d5c0d2;border-radius:13px;font:inherit;background:white;color:var(--ink)}button{font:inherit;cursor:pointer;border:0;border-radius:999px;padding:13px 25px;font-weight:700}.primary{background:linear-gradient(110deg,#e99bbb,#ae91d5);color:white;box-shadow:0 6px 14px #b18eb744}.secondary{background:#f8edf6;color:#6c4c70;border:1px solid #e7d4e6}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.hint{font-size:.85rem;color:#88768a}.error{color:#aa3555;font-weight:700}.hidden{display:none}.result-title{text-align:center;margin:34px 0 8px}.result-card{padding:24px;margin:20px 0;background:white;border:1px solid var(--line);border-radius:24px}.num-label{font-size:.9rem;color:#8c6b95;font-weight:700;letter-spacing:.08em}.num-name{font-size:1.42rem;margin:5px 0}.num-image{display:block;max-width:310px;width:90%;max-height:330px;object-fit:contain;margin:15px auto}.image-fallback{font-size:4rem;text-align:center;margin:24px}.num-badge{display:inline-block;background:#f9edf4;border-radius:999px;padding:2px 14px;color:#905d84}.result-card h3{font-size:1.06rem;margin:23px 0 6px;color:#795a85}.result-card p{margin:9px 0}.reflection{border-left:4px solid #e9a7c2;padding:10px 15px;background:#fff6fa;border-radius:0 10px 10px 0}.story{background:linear-gradient(140deg,#fff3f8,#f3efff);border-radius:20px;padding:22px;margin:25px 0}.story h3{margin-top:0}.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.gallery-item{text-align:center;background:white;border:1px solid var(--line);border-radius:16px;padding:10px 4px}.gallery-item img{width:100%;height:130px;object-fit:contain}.gallery-item strong{display:block;font-size:.85rem}.gallery-item small{display:block;font-size:.72rem}footer{text-align:center;color:#917c92;font-size:.82rem;padding:26px 0}.notice{background:#fff8e9;border:1px solid #f1e4c7;padding:14px;border-radius:12px;font-size:.86rem}@media(max-width:520px){.card,.result-card{padding:17px}.gallery-item img{height:100px}.gallery{gap:7px}.gallery-item small{font-size:.64rem}.actions button{flex:1}}
-</style></head><body><main><header class="hero"><div class="eyebrow">🐾 くまのいえ オリジナル数秘 🐾</div><h1>みっつの時間の数秘</h1><p>あなたの「こころの種」「いのちの色」「みらいの花」を、美空ちゃんと一緒に見つけるニャン🌸</p></header><section class="card"><div class="field"><label for="birthday">生年月日を入力してね🐱</label><input id="birthday" type="date" required><div class="hint">入力した生年月日は、この画面での計算だけに使用し、送信・保存しないニャン。</div></div><div class="actions"><button class="primary" id="readBtn">✨ 数秘を鑑定するニャン</button></div><p id="error" class="error" role="alert" aria-live="polite"></p></section><section id="results" class="hidden" aria-live="polite"><div class="result-title"><h2>あなたの3つの数字 🐾</h2><p>どの数字にも、光と影があるニャン。自分を決めつけず、心を見つめるヒントにしてね。</p></div><div id="resultCards"></div><section id="story" class="story"></section><div class="actions"><button class="secondary" id="copyBtn">📋 鑑定結果をコピー</button><button class="secondary" id="againBtn">🌷 もう一度鑑定する</button></div></section><section class="card"><h2>🐈 美空ちゃんの数秘キャラクター</h2><p class="hint">12種類の美空ちゃんが登場するニャン💕</p><div class="gallery" id="gallery"></div></section><section class="card"><h2>🌸 この数秘について</h2><p>「過去数」は心の土台、「現在数」は今の自分らしさ、「未来数」はこれから育てたい可能性。数字は運命を決めるものではなく、自分を知るためのひとつの物語として楽しんでね。</p><div class="notice">※ 数秘は科学的な性格診断や未来予測ではありません。医療・健康・人生の重要な判断は、実際の状況と専門家の助言を大切にしてね。</div></section><footer>© くまのいえ｜みっつの時間の数秘 🐾<br>あなたらしい毎日を大切にするニャン</footer></main><script>
+.image-preview{margin-top:20px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:20px;text-align:center}.image-preview img{display:block;width:100%;height:auto;border-radius:12px;box-shadow:0 5px 18px #9993;touch-action:manipulation}.download-link{display:inline-block;padding:12px 18px;border-radius:22px;background:#f8edf6;color:#6c4c70;text-decoration:none;font-weight:700}</style></head><body><main><header class="hero"><div class="eyebrow">🐾 くまのいえ オリジナル数秘 🐾</div><h1>みっつの時間の数秘</h1><p>あなたの「こころの種」「いのちの色」「みらいの花」を、美空ちゃんと一緒に見つけるニャン🌸</p></header><section class="card"><div class="field"><label for="birthday">生年月日を入力してね🐱</label><input id="birthday" type="date" required><div class="hint">入力した生年月日は、この画面での計算だけに使用し、送信・保存しないニャン。</div></div><div class="actions"><button class="primary" id="readBtn">✨ 数秘を鑑定するニャン</button></div><p id="error" class="error" role="alert" aria-live="polite"></p></section><section id="results" class="hidden" aria-live="polite"><div class="result-title"><h2>あなたの3つの数字 🐾</h2><p>どの数字にも、光と影があるニャン。自分を決めつけず、心を見つめるヒントにしてね。</p></div><div id="resultCards"></div><section id="story" class="story"></section><div class="actions"><button class="primary" id="imageBtn">🖼️ 鑑定結果を画像にする</button><button class="secondary" id="copyBtn">📋 文章をコピー</button><button class="secondary" id="againBtn">🌷 もう一度鑑定する</button></div><div id="imagePreview" class="hidden image-preview"><p>できたニャン💕 下の画像を長押しして「写真に保存」してね。画像をタップすると拡大できるニャン🐾</p><img id="generatedImage" alt="鑑定結果の保存用画像"><div class="actions"><a id="saveImageLink" class="download-link" download="kumanoie-kantei.PNG">画像ファイルを開く・保存する</a></div></div></section><section class="card"><h2>🐈 美空ちゃんの数秘キャラクター</h2><p class="hint">12種類の美空ちゃんが登場するニャン💕</p><div class="gallery" id="gallery"></div></section><section class="card"><h2>🌸 この数秘について</h2><p>「過去数」は心の土台、「現在数」は今の自分らしさ、「未来数」はこれから育てたい可能性。数字は運命を決めるものではなく、自分を知るためのひとつの物語として楽しんでね。</p><div class="notice">※ 数秘は科学的な性格診断や未来予測ではありません。医療・健康・人生の重要な判断は、実際の状況と専門家の助言を大切にしてね。</div></section><footer>© くまのいえ｜みっつの時間の数秘 🐾<br>あなたらしい毎日を大切にするニャン</footer></main><script>
 'use strict';
 // 画像は index.html と同じ階層に置く。ファイル名は前回の一覧に合わせています。
 const DATA={
@@ -30,4 +30,71 @@ const roleContent={past:{intro:'心の奥にある願い',heading:'こころの�
 for(const [title,body] of [[roleContent.intro,roleContent.lead],[roleContent.heading,data[r.key]],[roleContent.light,roleContent.lightText],[roleContent.shadow,roleContent.shadowText],[roleContent.tip,roleContent.tipText],[roleContent.question,roleContent.q]]){const h3=document.createElement('h3');h3.textContent=title;const p=document.createElement('p');p.textContent=body;if(title===roleContent.tip)p.className='reflection';card.append(h3,p)}container.append(card);txt+=`${r.title}：${n} ${data.name}\n${roleContent.lead}\n${data[r.key]}\n${roleContent.lightText}\n${roleContent.shadowText}\n${roleContent.tipText}\n\n`});const [a,b,c]=values;const story=$('story');story.replaceChildren();const h=document.createElement('h3');h.textContent='🌷 あなただけの、みっつの時間の物語';const p1=document.createElement('p');p1.textContent=`あなたの心の奥には「${DATA[a].name}」のテーマがあり、今のあなたは「${DATA[b].name}」を通して自分らしさを育てています。これから先には「${DATA[c].name}」という、新しい可能性の花が待っています。`;const p2=document.createElement('p');p2.textContent=`${DATA[a].past} ${DATA[b].present} ${DATA[c].future}`;const p3=document.createElement('p');p3.textContent='これは未来を決める予言ではなく、今のあなたが自分を見つめるための物語。どんな選択も、あなた自身が大切にしていいニャン🐾';story.append(h,p1,p2,p3);txt+=`みっつの時間の物語\n${p1.textContent}\n${p2.textContent}\n${p3.textContent}`;lastText=txt;$('results').classList.remove('hidden');$('results').scrollIntoView({behavior:'smooth',block:'start'})}
 $('readBtn').addEventListener('click',calculate);$('birthday').addEventListener('keydown',e=>{if(e.key==='Enter')calculate()});$('againBtn').addEventListener('click',()=>{$('results').classList.add('hidden');$('birthday').focus();window.scrollTo({top:0,behavior:'smooth'})});$('copyBtn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(lastText);$('copyBtn').textContent='コピーできたニャン🐾'}catch(e){$('copyBtn').textContent='コピーできなかったニャン'}});
 const gallery=$('gallery');nums.forEach(n=>{const item=document.createElement('div');item.className='gallery-item';item.append(imageEl(n,'gallery-image'));const b=document.createElement('strong');b.textContent=n;const s=document.createElement('small');s.textContent=DATA[n].name;item.append(b,s);gallery.append(item)});
+
+// 鑑定結果を画像として描画。外部ライブラリ・通信・個人情報保存なし。
+let resultImageUrl=null;
+const imageBtn=$('imageBtn');
+const preview=$('imagePreview');
+function drawWrapped(ctx,text,x,y,maxWidth,lineHeight){
+  const chars=Array.from(String(text));let line='';
+  for(const ch of chars){if(ch==='\n'){ctx.fillText(line,x,y);y+=lineHeight;line='';continue}
+    if(ctx.measureText(line+ch).width>maxWidth&&line){ctx.fillText(line,x,y);y+=lineHeight;line=ch}else line+=ch;
+  }
+  if(line){ctx.fillText(line,x,y);y+=lineHeight}return y;
+}
+async function loadImage(src){return new Promise(resolve=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>resolve(null);im.src=src})}
+async function createResultImage(){
+  imageBtn.disabled=true;imageBtn.textContent='画像を作っているニャン…';
+  try{
+    const cards=[...document.querySelectorAll('#resultCards .result-card')];
+    if(!cards.length)throw Error('先に鑑定してね');
+    const W=1080,margin=65,inner=W-2*margin;
+    const canvas=document.createElement('canvas');canvas.width=W;
+    const ctx=canvas.getContext('2d');if(!ctx)throw Error('画像を作れませんでした');
+    const sections=[];
+    for(const card of cards){
+      const title=card.querySelector('.num-label').textContent;
+      const name=card.querySelector('.num-name').textContent;
+      const img=card.querySelector('img.num-image');
+      const entries=[...card.querySelectorAll('h3')].map(h=>({head:h.textContent,body:h.nextElementSibling?.textContent||''}));
+      sections.push({title,name,src:img?.getAttribute('src'),entries});
+    }
+    const story=$('story');
+    const storyText=[...story.querySelectorAll('p')].map(e=>e.textContent);
+    // 文字を計測して、文章を省略せず全て収める縦長画像を生成
+    ctx.font='30px sans-serif';
+    function countLines(text,width,font){ctx.font=font;let lines=1,line='';for(const ch of Array.from(text)){if(ch==='\n'){lines++;line='';continue}if(ctx.measureText(line+ch).width>width&&line){lines++;line=ch}else line+=ch}return lines}
+    let H=270;
+    for(const sec of sections){H+=125+270+45;for(const entry of sec.entries){H+=55+countLines(entry.body,inner-70,'30px sans-serif')*49+20}H+=55}
+    H+=130;for(const t of storyText)H+=countLines(t,inner-70,'30px sans-serif')*49+35;H+=160;
+    if(H>16000)throw Error('画像が長すぎるため作成できませんでした');
+    canvas.height=Math.ceil(H);
+    ctx.fillStyle='#fff9fc';ctx.fillRect(0,0,W,canvas.height);
+    let y=95;ctx.textAlign='center';ctx.fillStyle='#7d547d';ctx.font='bold 48px sans-serif';ctx.fillText('🐾 くまのいえ オリジナル数秘 🐾',W/2,y);y+=66;
+    ctx.font='bold 43px sans-serif';ctx.fillText('みっつの時間の数秘',W/2,y);y+=78;
+    for(const sec of sections){
+      const top=y-38;
+      ctx.fillStyle='#ffffff';ctx.fillRect(35,top,W-70,60);
+      ctx.textAlign='left';ctx.fillStyle='#98618f';ctx.font='bold 30px sans-serif';ctx.fillText(sec.title,margin,y);y+=62;
+      ctx.fillStyle='#574359';ctx.font='bold 42px sans-serif';ctx.fillText(sec.name,margin,y);y+=25;
+      const im=await loadImage(sec.src);
+      if(im){const maxW=380,maxH=260;const scale=Math.min(maxW/im.width,maxH/im.height);const w=im.width*scale,h=im.height*scale;ctx.drawImage(im,(W-w)/2,y+10,w,h)}
+      y+=285;
+      for(const entry of sec.entries){ctx.fillStyle='#865e8c';ctx.font='bold 33px sans-serif';ctx.fillText(entry.head,margin,y);y+=53;ctx.fillStyle='#594557';ctx.font='30px sans-serif';y=drawWrapped(ctx,entry.body,margin+12,y,inner-35,49);y+=20}
+      y+=30;ctx.strokeStyle='#ebd6e6';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(margin,y);ctx.lineTo(W-margin,y);ctx.stroke();y+=65;
+    }
+    ctx.fillStyle='#805c8b';ctx.font='bold 36px sans-serif';ctx.fillText('🌷 あなただけの、みっつの時間の物語',margin,y);y+=75;
+    for(const t of storyText){ctx.fillStyle='#594557';ctx.font='30px sans-serif';y=drawWrapped(ctx,t,margin+12,y,inner-35,49);y+=35}
+    ctx.fillStyle='#947b90';ctx.font='25px sans-serif';ctx.fillText('数字は自分を見つめるヒント。未来を決めるものではないニャン🐾',margin,y+28);
+    const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));
+    if(!blob)throw Error('画像の生成に失敗しました');
+    if(resultImageUrl)URL.revokeObjectURL(resultImageUrl);
+    resultImageUrl=URL.createObjectURL(blob);
+    $('generatedImage').src=resultImageUrl;$('saveImageLink').href=resultImageUrl;
+    preview.classList.remove('hidden');preview.scrollIntoView({behavior:'smooth',block:'start'});
+    imageBtn.textContent='🖼️ 画像を作り直す';
+  }catch(e){imageBtn.textContent='🖼️ 鑑定結果を画像にする';alert(e.message||'画像を作れなかったニャン')}finally{imageBtn.disabled=false}
+}
+imageBtn.addEventListener('click',createResultImage);
+$('readBtn').addEventListener('click',()=>{preview.classList.add('hidden')});
 </script></body></html>
